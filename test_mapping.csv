@@ -1,0 +1,10 @@
+api_field,table,dynamodb_column,data_type,max_length,required,transformation
+customer_id,cdp_customer,profile:customer_id,string,50,true,"none"
+email,cdp_customer,profile:email,string,255,conditional,"trim;require_one:email,phone_number"
+phone_number,cdp_customer,profile:phone_number,string,20,conditional,"trim;require_one:email,phone_number"
+first_name,cdp_customer,profile:first_name,string,100,false,"trim"
+last_name,cdp_customer,profile:last_name,string,100,conditional,"trim;require_if:first_name"
+customer_id,cdp_behavior,subscription:customer_id,string,50,true,"none"
+subscriptions[].subscription_id,cdp_behavior,subscription:subscriptions[].subscription_id,string,50,true,"none"
+subscriptions[].opt_date,cdp_behavior,subscription:subscriptions[].opt_date,datetime,,true,"none"
+subscriptions[].opt_status,cdp_behavior,subscription:subscriptions[].opt_status,string,1,true,"enum:Y,N"
