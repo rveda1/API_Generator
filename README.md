@@ -1,10 +1,10 @@
-# API Generator Samples
+# Generative AI API Generator Samples
 
-This repository contains artifacts for automating API development, as described in the blog post "Automating API Development with AI to Accelerate Time-to-Market." These resources streamline API creation by parsing an API mapping document to generate a comprehensive API endpoint.
+This repository contains artifacts for automating **API development** with **Generative AI**, as described in the blog post "Automating API Development with Generative AI for Faster Time-to-Market." These resources streamline API creation by parsing an API mapping document to generate a comprehensive API endpoint.
 
 ## Files
 - **test_mapping.csv**: A sample API mapping document defining fields (e.g., `customer_id`, `email`, `subscriptions[].opt_status`) with validations (e.g., required, conditional, enum:Y,N).
-- **ParserFunction.py**: A Python script that parses the CSV and generates a Lambda function with a Flask-like API endpoint, supporting all validations (e.g., data types, max length, conditional rules), deployable in AWS Lambda.
+- **ParserFunction.py**: A Python script that parses the CSV and generates a Lambda function with a Flask-like API endpoint, supporting all validations (e.g., data types, max length, conditional rules), deployable in AWS Lambda with **GenAI code generation**.
 
 ## Usage
 1. **API Mapping Document**:
@@ -12,7 +12,7 @@ This repository contains artifacts for automating API development, as described 
    - Required columns: `api_field`, `table`, `dynamodb_column`, `data_type`, `max_length`, `required`, `transformation`.
 2. **ParserFunction Script**:
    - Deploy in a serverless environment (e.g., AWS Lambda) triggered by an S3 upload.
-   - Generates a Lambda function with validations for all CSV fields.
+   - Generates a Lambda function with validations for all CSV fields, using **Generative AI** via Nova-Pro.
    - Adapt the generated code for other frameworks (e.g., FastAPI) or databases (e.g., MySQL).
 3. **Testing**:
    - Test locally with `test_mapping.csv` to generate an API endpoint.
@@ -24,4 +24,4 @@ This repository contains artifacts for automating API development, as described 
 - Modify `ParserFunction.py` for Java or .NET code generation.
 - Enhance the generated code with custom error handling.
 
-These artifacts can help reduce client onboarding time by up to 80% and accelerate time-to-market, as demonstrated in our project.
+These artifacts can help reduce client onboarding time by up to 80% and accelerate time-to-market, as demonstrated in our **Generative AI**-driven project.
